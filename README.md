@@ -58,7 +58,7 @@ If you have already installed a previous FSP release that included e² studio th
 
 #### If using RX Smart Configurator (RXSC) with IAR Embedded Workbench
 
-1. See [RXSC User Guide for IAR](https://renesas.github.io/rx-fsp/_s_t_a_r_t__d_e_v.html#RXSC-IAR-user-guide). (Under Construction)
+1. See [RXSC User Guide for IAR](https://renesas.github.io/rx-fsp/_s_t_a_r_t__d_e_v.html#RXSC-IAR-user-guide). 
 
 ### Starting Development
 
@@ -69,7 +69,7 @@ If you have already installed a previous FSP release that included e² studio th
 
 FSP Releases:  https://github.com/renesas/rx-fsp/releases
 
-FSP Documentation: https://renesas.github.io/rx-fsp (Under Construction)
+FSP Documentation: https://renesas.github.io/rx-fsp
 
 FSP Webpage: http://renesas.com/rx-fsp (Under Construction)
 
