@@ -1,0 +1,76 @@
+var group___c_a_n_f_d_g =
+[
+    [ "canfdg_afl_entry_t", "group___c_a_n_f_d_g.html#structcanfdg__afl__entry__t", null ],
+    [ "canfdg_global_cfg_t", "group___c_a_n_f_d_g.html#structcanfdg__global__cfg__t", [
+      [ "global_interrupts", "group___c_a_n_f_d_g.html#a2981c4c20cac4692b711ad9bc71bb8cb", null ],
+      [ "global_config", "group___c_a_n_f_d_g.html#a0bee6444932d58dcdc2ed5835e7aff59", null ],
+      [ "rx_fifo_config", "group___c_a_n_f_d_g.html#a581f8ccb54645b78cfb4ad451d979a60", null ],
+      [ "rx_mb_config", "group___c_a_n_f_d_g.html#aefb5b82f750b03cd10b7970b37eb958d", null ],
+      [ "global_err_ipl", "group___c_a_n_f_d_g.html#a9f7d912d62ff64542577ea2db3687952", null ],
+      [ "rx_fifo_ipl", "group___c_a_n_f_d_g.html#a054901321554671986d485824475baff", null ],
+      [ "common_fifo_config", "group___c_a_n_f_d_g.html#aa2d1c78f45bd4d7bc96d94ca36b4799b", null ]
+    ] ],
+    [ "canfdg_extended_cfg_t", "group___c_a_n_f_d_g.html#structcanfdg__extended__cfg__t", [
+      [ "p_afl", "group___c_a_n_f_d_g.html#ad1e48b69b68f6980959605c1e3aaca3f", null ],
+      [ "txmb_txi_enable", "group___c_a_n_f_d_g.html#a2f2a96f1a778ad629d2d2df524b93b3e", null ],
+      [ "error_interrupts", "group___c_a_n_f_d_g.html#a2b0ac18a92dd63ea71c81ef151fa1030", null ],
+      [ "p_data_timing", "group___c_a_n_f_d_g.html#a06f64771b6b3b1d5053758a5fdcc3fa8", null ],
+      [ "delay_compensation", "group___c_a_n_f_d_g.html#a048c0b13ca1a26fed33f73a323dd2736", null ],
+      [ "p_global_cfg", "group___c_a_n_f_d_g.html#a5a20888c0ad4b39e9c26c84f45522682", null ]
+    ] ],
+    [ "canfdg_status_t", "group___c_a_n_f_d_g.html#ga3a79e6c2184a64fa6a4bbfbdf123b276", [
+      [ "CANFDG_STATUS_RESET_MODE", "group___c_a_n_f_d_g.html#gga3a79e6c2184a64fa6a4bbfbdf123b276afe4004edb4192d86e77c4b0bbdd2f5ea", null ],
+      [ "CANFDG_STATUS_HALT_MODE", "group___c_a_n_f_d_g.html#gga3a79e6c2184a64fa6a4bbfbdf123b276a13e7faa8c33e1e48b3fe4e066ae2ef73", null ],
+      [ "CANFDG_STATUS_SLEEP_MODE", "group___c_a_n_f_d_g.html#gga3a79e6c2184a64fa6a4bbfbdf123b276a759f675ce78de5fa345d5db831631e78", null ],
+      [ "CANFDG_STATUS_ERROR_PASSIVE", "group___c_a_n_f_d_g.html#gga3a79e6c2184a64fa6a4bbfbdf123b276aee36bb2ecac746f72be577a9a500bd55", null ],
+      [ "CANFDG_STATUS_BUS_OFF", "group___c_a_n_f_d_g.html#gga3a79e6c2184a64fa6a4bbfbdf123b276af2d89c10d9f4de0129bc9555276aef7f", null ],
+      [ "CANFDG_STATUS_TRANSMITTING", "group___c_a_n_f_d_g.html#gga3a79e6c2184a64fa6a4bbfbdf123b276ac34bb71141820cb5268066dfb98674c2", null ],
+      [ "CANFDG_STATUS_RECEIVING", "group___c_a_n_f_d_g.html#gga3a79e6c2184a64fa6a4bbfbdf123b276ac4a3a3e6b62771bb350857fa3866ae4c", null ],
+      [ "CANFDG_STATUS_READY", "group___c_a_n_f_d_g.html#gga3a79e6c2184a64fa6a4bbfbdf123b276ae9cf52c6afefed126d6008035cf01f8c", null ],
+      [ "CANFDG_STATUS_ESI", "group___c_a_n_f_d_g.html#gga3a79e6c2184a64fa6a4bbfbdf123b276aae18246c153b4fb3066794ed43c093e5", null ]
+    ] ],
+    [ "canfdg_error_t", "group___c_a_n_f_d_g.html#ga404b0cfdc668b5258aa559895acf54f8", [
+      [ "CANFDG_ERROR_CHANNEL_BUS", "group___c_a_n_f_d_g.html#gga404b0cfdc668b5258aa559895acf54f8a93cc5ff78389830f808c58953338552c", null ],
+      [ "CANFDG_ERROR_CHANNEL_WARNING", "group___c_a_n_f_d_g.html#gga404b0cfdc668b5258aa559895acf54f8a181727bf8a8822ca9bf82e05e5d64b8d", null ],
+      [ "CANFDG_ERROR_CHANNEL_PASSIVE", "group___c_a_n_f_d_g.html#gga404b0cfdc668b5258aa559895acf54f8aecdcf36644bf9df610cb81888af44afd", null ],
+      [ "CANFDG_ERROR_CHANNEL_BUS_OFF_ENTRY", "group___c_a_n_f_d_g.html#gga404b0cfdc668b5258aa559895acf54f8afab98fe2a3f96f14a927cb4487b94de3", null ],
+      [ "CANFDG_ERROR_CHANNEL_BUS_OFF_RECOVERY", "group___c_a_n_f_d_g.html#gga404b0cfdc668b5258aa559895acf54f8aa11072867ee01ddee69b3e6e2f3e10c7", null ],
+      [ "CANFDG_ERROR_CHANNEL_OVERLOAD", "group___c_a_n_f_d_g.html#gga404b0cfdc668b5258aa559895acf54f8a8b6394d156e6da3f8bbe7b466acfc0a6", null ],
+      [ "CANFDG_ERROR_CHANNEL_BUS_LOCK", "group___c_a_n_f_d_g.html#gga404b0cfdc668b5258aa559895acf54f8a15a2221b69c609ec312865f5419a3f88", null ],
+      [ "CANFDG_ERROR_CHANNEL_ARBITRATION_LOSS", "group___c_a_n_f_d_g.html#gga404b0cfdc668b5258aa559895acf54f8a83783cd8dab884ad80aef9333fd8aefe", null ],
+      [ "CANFDG_ERROR_CHANNEL_STUFF", "group___c_a_n_f_d_g.html#gga404b0cfdc668b5258aa559895acf54f8a687a08be7af29b5945b3181d709bd30a", null ],
+      [ "CANFDG_ERROR_CHANNEL_FORM", "group___c_a_n_f_d_g.html#gga404b0cfdc668b5258aa559895acf54f8a784e592e8f953e40de096f673c50123d", null ],
+      [ "CANFDG_ERROR_CHANNEL_ACK", "group___c_a_n_f_d_g.html#gga404b0cfdc668b5258aa559895acf54f8a060804893fdb5a262bbeeb0b4d013946", null ],
+      [ "CANFDG_ERROR_CHANNEL_CRC", "group___c_a_n_f_d_g.html#gga404b0cfdc668b5258aa559895acf54f8a590b0f8daccd0f8d28a328e45c9ce116", null ],
+      [ "CANFDG_ERROR_CHANNEL_BIT_RECESSIVE", "group___c_a_n_f_d_g.html#gga404b0cfdc668b5258aa559895acf54f8a30a5b9050edea36d6e8b95e84dd57909", null ],
+      [ "CANFDG_ERROR_CHANNEL_BIT_DOMINANT", "group___c_a_n_f_d_g.html#gga404b0cfdc668b5258aa559895acf54f8a822a098f68ec4c6934e95aaf2aebbbd3", null ],
+      [ "CANFDG_ERROR_CHANNEL_ACK_DELIMITER", "group___c_a_n_f_d_g.html#gga404b0cfdc668b5258aa559895acf54f8a80477725cbdedc7c196d2aa995cd265d", null ],
+      [ "CANFDG_ERROR_GLOBAL_DLC", "group___c_a_n_f_d_g.html#gga404b0cfdc668b5258aa559895acf54f8a82d176a0acfd037251e1a7597552e977", null ],
+      [ "CANFDG_ERROR_GLOBAL_MESSAGE_LOST", "group___c_a_n_f_d_g.html#gga404b0cfdc668b5258aa559895acf54f8a5b5cb4ff4f0518758758b87c080b43b7", null ],
+      [ "CANFDG_ERROR_GLOBAL_PAYLOAD_OVERFLOW", "group___c_a_n_f_d_g.html#gga404b0cfdc668b5258aa559895acf54f8a9092736568e5b78848925b471e8ade6b", null ],
+      [ "CANFDG_ERROR_GLOBAL_TXQ_OVERWRITE", "group___c_a_n_f_d_g.html#gga404b0cfdc668b5258aa559895acf54f8ab0ddad914229ccfac9596f1601bd28a8", null ],
+      [ "CANFDG_ERROR_GLOBAL_TXQ_MESSAGE_LOST", "group___c_a_n_f_d_g.html#gga404b0cfdc668b5258aa559895acf54f8aabeea07fa072cbf1174e369c07d163a0", null ],
+      [ "CANFDG_ERROR_GLOBAL_CH0_SCAN_FAIL", "group___c_a_n_f_d_g.html#gga404b0cfdc668b5258aa559895acf54f8aa668be8785001445eda0ae55b2a6e74a", null ],
+      [ "CANFDG_ERROR_GLOBAL_CH1_SCAN_FAIL", "group___c_a_n_f_d_g.html#gga404b0cfdc668b5258aa559895acf54f8a27bb6ea52c0e94fade6f517c306a88de", null ],
+      [ "CANFDG_ERROR_GLOBAL_CH0_ECC", "group___c_a_n_f_d_g.html#gga404b0cfdc668b5258aa559895acf54f8a6bcc6c3a52bfa03762a32c276ca52148", null ],
+      [ "CANFDG_ERROR_GLOBAL_CH1_ECC", "group___c_a_n_f_d_g.html#gga404b0cfdc668b5258aa559895acf54f8ad6fb4231af4291b8afd45572bf9ed87e", null ]
+    ] ],
+    [ "canfdg_tx_buffer_t", "group___c_a_n_f_d_g.html#ga5cd92ddc4530c9e190d2eb129af2edd2", null ],
+    [ "canfdg_tx_mb_t", "group___c_a_n_f_d_g.html#gabd32a9d2c3a281fbba484ebf89fcc8d9", null ],
+    [ "canfdg_rx_buffer_t", "group___c_a_n_f_d_g.html#ga911f6a94fa2c4ddb015c282701e12ba3", null ],
+    [ "canfdg_rx_mb_t", "group___c_a_n_f_d_g.html#ga2dbb0693fb62c38720c57549a4860647", null ],
+    [ "canfdg_rx_fifo_t", "group___c_a_n_f_d_g.html#ga2240726858e0df1c9ae158d0c6279932", null ],
+    [ "canfdg_minimum_dlc_t", "group___c_a_n_f_d_g.html#ga89ecc657d8f00daa7f6b5d7e8df3e06f", null ],
+    [ "canfdg_frame_options_t", "group___c_a_n_f_d_g.html#ga7ead92bda60cbde87e45e5adb731af3f", [
+      [ "CANFDG_FRAME_OPTION_ERROR", "group___c_a_n_f_d_g.html#gga7ead92bda60cbde87e45e5adb731af3fabac185f6279f0ce6a0fdc265bf3a6930", null ],
+      [ "CANFDG_FRAME_OPTION_BRS", "group___c_a_n_f_d_g.html#gga7ead92bda60cbde87e45e5adb731af3fabfb6000067be82636a5f02f81e650dae", null ],
+      [ "CANFDG_FRAME_OPTION_FD", "group___c_a_n_f_d_g.html#gga7ead92bda60cbde87e45e5adb731af3fae6a5ae0790af6b9e691e5a6ea7eebbf4", null ]
+    ] ],
+    [ "R_CANFDG_Open", "group___c_a_n_f_d_g.html#gab47c86f99bfeaab58b1121685feb1702", null ],
+    [ "R_CANFDG_Close", "group___c_a_n_f_d_g.html#ga361eada3931031d6fa4f72eefe7763b0", null ],
+    [ "R_CANFDG_Write", "group___c_a_n_f_d_g.html#gabb589c3434192797c1ee59771360b9a5", null ],
+    [ "R_CANFDG_Read", "group___c_a_n_f_d_g.html#ga72e2978519ac6819616252d56207c7db", null ],
+    [ "R_CANFDG_ModeTransition", "group___c_a_n_f_d_g.html#gaa8a244a368841547407d18352ca0a64c", null ],
+    [ "R_CANFDG_InfoGet", "group___c_a_n_f_d_g.html#ga6415b036904a4ebaec6a31a23a54e78f", null ],
+    [ "R_CANFDG_CallbackSet", "group___c_a_n_f_d_g.html#gabf391eca42ae7b49f30c54125cba687f", null ]
+];

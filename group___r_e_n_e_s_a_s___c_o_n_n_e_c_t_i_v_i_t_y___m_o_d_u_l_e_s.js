@@ -1,0 +1,26 @@
+var group___r_e_n_e_s_a_s___c_o_n_n_e_c_t_i_v_i_t_y___m_o_d_u_l_e_s =
+[
+    [ "CAN FD (r_canfd)", "group___c_a_n_f_d.html", "group___c_a_n_f_d" ],
+    [ "CAN FDG (r_canfdg)", "group___c_a_n_f_d_g.html", "group___c_a_n_f_d_g" ],
+    [ "I3C (r_i3c)", "group___i3_c.html", "group___i3_c" ],
+    [ "I2C Master (r_iic_b_master)", "group___i_i_c___b___m_a_s_t_e_r.html", "group___i_i_c___b___m_a_s_t_e_r" ],
+    [ "I2C Slave (r_iic_b_slave)", "group___i_i_c___b___s_l_a_v_e.html", "group___i_i_c___b___s_l_a_v_e" ],
+    [ "I2C Master (r_sci_b_i2c)", "group___s_c_i___b___i2_c.html", "group___s_c_i___b___i2_c" ],
+    [ "SPI (r_sci_b_spi)", "group___s_c_i___b___s_p_i.html", "group___s_c_i___b___s_p_i" ],
+    [ "UART (r_sci_b_uart)", "group___s_c_i___b___u_a_r_t.html", "group___s_c_i___b___u_a_r_t" ],
+    [ "SPI (r_spi_b)", "group___s_p_i___b.html", "group___s_p_i___b" ],
+    [ "I2S (r_ssi)", "group___s_s_i.html", "group___s_s_i" ],
+    [ "USB (r_usb_basic)", "group___u_s_b.html", "group___u_s_b" ],
+    [ "USB Composite (r_usb_composite)", "group___u_s_b___c_o_m_p_o_s_i_t_e.html", null ],
+    [ "USB Host Communications Device Class (r_usb_hcdc)", "group___u_s_b___h_c_d_c.html", "group___u_s_b___h_c_d_c" ],
+    [ "USB Host Human Interface Device Class Driver (r_usb_hhid)", "group___u_s_b___h_h_i_d.html", "group___u_s_b___h_h_i_d" ],
+    [ "USB Host Mass Storage Class Driver (r_usb_hmsc)", "group___u_s_b___h_m_s_c.html", null ],
+    [ "USB Host Vendor class (r_usb_hvnd)", "group___u_s_b___h_v_n_d.html", null ],
+    [ "USB PCDC (r_usb_pcdc)", "group___u_s_b___p_c_d_c.html", null ],
+    [ "USB PHID (r_usb_phid)", "group___u_s_b___p_h_i_d.html", null ],
+    [ "USB PMSC (r_usb_pmsc)", "group___u_s_b___p_m_s_c.html", null ],
+    [ "USB Peripheral Printer (r_usb_pprn)", "group___u_s_b___p_p_r_n.html", null ],
+    [ "USB Peripheral Vendor class (r_usb_pvnd)", "group___u_s_b___p_v_n_d.html", null ],
+    [ "USB_PCDC Communication Device (rm_comms_usb_pcdc)", "group___r_m___c_o_m_m_s___u_s_b___p_c_d_c.html", "group___r_m___c_o_m_m_s___u_s_b___p_c_d_c" ],
+    [ "Azure RTOS USBX Port (rm_usbx_port)", "group___u_s_b_x.html", null ]
+];

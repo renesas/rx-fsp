@@ -1,0 +1,26 @@
+var group___r_e_n_e_s_a_s___n_e_t_w_o_r_k_i_n_g___m_o_d_u_l_e_s =
+[
+    [ "Ethercat (r_ethercat_phy)", "group___e_t_h_e_r_c_a_t___p_h_y.html", "group___e_t_h_e_r_c_a_t___p_h_y" ],
+    [ "Ethernet Generic PTP Timer (r_gptp)", "group___g_p_t_p.html", "group___g_p_t_p" ],
+    [ "Layer3 Ethernet Switch (r_layer3_switch)", "group___l_a_y_e_r3___s_w_i_t_c_h.html", "group___l_a_y_e_r3___s_w_i_t_c_h" ],
+    [ "Ethernet (r_rmac)", "group___r_m_a_c.html", "group___r_m_a_c" ],
+    [ "Ethernet (r_rmac_phy)", "group___r_m_a_c___p_h_y.html", "group___r_m_a_c___p_h_y" ],
+    [ "AWS PKCS11 PAL on LittleFS (rm_aws_pkcs11_pal_littlefs)", "group___a_w_s___p_k_c_s11___p_a_l___l_i_t_t_l_e_f_s.html", null ],
+    [ "EtherCAT SSC Port (rm_ethercat_ssc_port)", "group___r_m___e_t_h_e_r_c_a_t___s_s_c___p_o_r_t.html", "group___r_m___e_t_h_e_r_c_a_t___s_s_c___p_o_r_t" ],
+    [ "AWS coreHTTP", "group___a_w_s__core_h_t_t_p.html", null ],
+    [ "AWS MQTT", "group___a_w_s___m_q_t_t.html", null ],
+    [ "FreeRTOS+TCP Wrapper to r_ether (rm_freertos_plus_tcp)", "group___f_r_e_e_r_t_o_s___p_l_u_s___t_c_p.html", null ],
+    [ "gPTP Ethernet Switch Module(rm_gptp_eswm)", "group___r_m___g_p_t_p___e_s_w_m.html", null ],
+    [ "gPTP Baremetal Porting Layer (rm_gptp_sys_baremetal)", "group___r_m___g_p_t_p___s_y_s___b_a_r_e_m_e_t_a_l.html", null ],
+    [ "gPTP FreeRTOS Porting Layer (rm_gptp_sys_freertos)", "group___r_m___g_p_t_p___s_y_s___f_r_e_e_r_t_o_s.html", null ],
+    [ "lwIP HTTP Server", "group___l_w_i_p___h_t_t_p___s_e_r_v_e_r.html", null ],
+    [ "lwIP Iperf", "group___l_w_i_p___i_p_e_r_f.html", null ],
+    [ "lwIP MQTT", "group___l_w_i_p___m_q_t_t.html", null ],
+    [ "lwIP NETBIOSNS", "group___l_w_i_p___n_e_t_b_i_o_s_n_s.html", null ],
+    [ "lwIP SMTP", "group___l_w_i_p___s_m_t_p.html", null ],
+    [ "lwIP SNTP", "group___l_w_i_p___s_n_t_p.html", null ],
+    [ "lwIP Ethernet Driver (rm_lwip_ether)", "group___r_m___l_w_i_p___e_t_h_e_r.html", "group___r_m___l_w_i_p___e_t_h_e_r" ],
+    [ "lwIP Baremetal Porting Layer (rm_lwip_sys_baremetal)", "group___r_m___l_w_i_p___s_y_s___b_a_r_e_m_e_t_a_l.html", null ],
+    [ "lwIP FreeRTOS Porting Layer (rm_lwip_sys_freertos)", "group___r_m___l_w_i_p___s_y_s___f_r_e_e_r_t_o_s.html", null ],
+    [ "NetX Duo Ethernet Driver (rm_netxduo_ether)", "group___r_m___n_e_t_x_d_u_o___e_t_h_e_r.html", null ]
+];
