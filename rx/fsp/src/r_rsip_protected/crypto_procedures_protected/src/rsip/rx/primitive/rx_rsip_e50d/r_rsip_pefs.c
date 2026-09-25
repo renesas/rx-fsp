@@ -1,0 +1,43 @@
+/*
+* Copyright (c) 2020 - 2026 Renesas Electronics Corporation and/or its affiliates
+*
+* SPDX-License-Identifier: BSD-3-Clause
+*/
+
+/***********************************************************************************************************************
+ * Includes
+ **********************************************************************************************************************/
+#include "r_rsip_primitive.h"
+#include "r_rsip_reg.h"
+#include "r_rsip_util.h"
+
+/***********************************************************************************************************************
+ * Functions
+ **********************************************************************************************************************/
+
+RSIP_PRV_PRIMITIVE_FUNC
+
+rsip_ret_t r_rsip_pefs (uint32_t OutData_State[])
+{
+    uint32_t iLoop = 0U;
+
+    for (iLoop = 0U; iLoop < 18U; iLoop++)
+    {
+        RD1_ADDR(REG_202CH, &OutData_State[iLoop]);
+    }
+
+    WR1_PROG(REG_1458H, 0x00000000U);
+
+    RD1_ADDR(REG_2014H, &OutData_State[18]);
+    RD1_ADDR(REG_2010H, &OutData_State[19]);
+
+    static const uint32_t Param_pefs_func102_001[] =
+    {
+        BSWAP_32BIG_C(0x2a4f0e8bU), BSWAP_32BIG_C(0x62d29263U), BSWAP_32BIG_C(0xe14d8863U), BSWAP_32BIG_C(0x89c226fbU),
+    };
+    r_rsip_func102(Param_pefs_func102_001);
+    WR1_PROG(REG_14BCH, 0x00000040U);
+    WAIT_STS(REG_142CH, 12, 0);
+
+    return RSIP_RET_PASS;
+}

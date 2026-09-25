@@ -1,0 +1,125 @@
+/*
+* Copyright (c) 2020 - 2026 Renesas Electronics Corporation and/or its affiliates
+*
+* SPDX-License-Identifier: BSD-3-Clause
+*/
+
+#include "hw_sce_rx_private.h"
+
+void HW_SCE_p_func303 (void)
+{
+    WR1_PROG(REG_1404H, 0x17a80000U);
+    WR1_PROG(REG_1608H, 0x800102e0U);
+    WR1_PROG(REG_1400H, 0x00030005U);
+    WAIT_STS(REG_1404H, 30, 0);
+    WR1_PROG(REG_143CH, 0x00001800U);
+    WR1_PROG(REG_1400H, 0x03430005U);
+    WAIT_STS(REG_1404H, 30, 0);
+    WR1_PROG(REG_143CH, 0x00001800U);
+
+    WR1_PROG(REG_1404H, 0x1f480000U);
+    WR1_PROG(REG_1608H, 0x80010300U);
+    WR1_PROG(REG_1400H, 0x00030005U);
+    WAIT_STS(REG_1404H, 30, 0);
+    WR1_PROG(REG_143CH, 0x00001800U);
+    WR1_PROG(REG_1400H, 0x03430005U);
+    WAIT_STS(REG_1404H, 30, 0);
+    WR1_PROG(REG_143CH, 0x00001800U);
+
+    WR1_PROG(REG_1014H, 0x00000838U);
+    WR1_PROG(REG_1018H, 0x00000fd8U);
+    WR1_PROG(REG_1020H, 0x00000e50U);
+
+    WR1_PROG(REG_1004H, 0x1111000aU);
+    WR1_PROG(REG_1000H, 0x00010001U);
+    WAIT_STS(REG_1000H, 0, 0);
+
+    WR1_PROG(REG_143CH, 0x00a10000U);
+
+    HW_SCE_p_func100(0x6970c146U, 0x5e5de9baU, 0xba87e350U, 0x86947bc3U);
+    WR1_PROG(REG_143CH, 0x00400000U);
+
+    if (CHCK_STS(REG_143CH, 22, 1))
+    {
+        WR1_PROG(REG_1600H, 0x38000af8U);
+        WR1_PROG(REG_1608H, 0x00000080U);
+        WR1_PROG(REG_143CH, 0x00260000U);
+
+        HW_SCE_p_func100(0xa9f20bdbU, 0x50fdfceeU, 0xec66f6dbU, 0xeb819a19U);
+        WR1_PROG(REG_143CH, 0x00400000U);
+
+        if (CHCK_STS(REG_143CH, 22, 1))
+        {
+            WR1_PROG(REG_1014H, 0x00000838U);
+            WR1_PROG(REG_1018H, 0x00000fd8U);
+            WR1_PROG(REG_1020H, 0x00000838U);
+
+            WR1_PROG(REG_1004H, 0x1111000aU);
+            WR1_PROG(REG_1000H, 0x00010001U);
+            WAIT_STS(REG_1000H, 0, 0);
+
+            HW_SCE_p_func101(0x560ced3cU, 0x8736132bU, 0x9fc30bddU, 0xce46a062U);
+        }
+        else
+        {
+            WR1_PROG(REG_1014H, 0x00000838U);
+            WR1_PROG(REG_1018H, 0x00000fd8U);
+            WR1_PROG(REG_1020H, 0x00000838U);
+
+            WR1_PROG(REG_1004H, 0x11110009U);
+            WR1_PROG(REG_1000H, 0x00010001U);
+            WAIT_STS(REG_1000H, 0, 0);
+
+            HW_SCE_p_func101(0x9bf6579bU, 0x35f6db3eU, 0xc6cd415fU, 0x1d1d96f1U);
+        }
+    }
+    else
+    {
+        WR1_PROG(REG_1600H, 0x38000af8U);
+        WR1_PROG(REG_1608H, 0x00000080U);
+        WR1_PROG(REG_143CH, 0x00260000U);
+
+        HW_SCE_p_func100(0x39f6171bU, 0x08f8e2c3U, 0x0acc44a1U, 0x3219ba07U);
+        WR1_PROG(REG_143CH, 0x00400000U);
+
+        if (CHCK_STS(REG_143CH, 22, 1))
+        {
+            WR1_PROG(REG_1014H, 0x00000fd8U);
+            WR1_PROG(REG_1018H, 0x00000838U);
+            WR1_PROG(REG_1020H, 0x00000838U);
+
+            WR1_PROG(REG_1004H, 0x1111000aU);
+            WR1_PROG(REG_1000H, 0x00010001U);
+            WAIT_STS(REG_1000H, 0, 0);
+
+            WR1_PROG(REG_1600H, 0x0000dee0U);
+
+            HW_SCE_p_func101(0x9ffe02deU, 0xd3fdf5d2U, 0x9b849df2U, 0x01a9e287U);
+        }
+        else
+        {
+            WR1_PROG(REG_1014H, 0x00000838U);
+            WR1_PROG(REG_1018H, 0x00000fd8U);
+            WR1_PROG(REG_1020H, 0x00000838U);
+
+            WR1_PROG(REG_1004H, 0x11110009U);
+            WR1_PROG(REG_1000H, 0x00010001U);
+            WAIT_STS(REG_1000H, 0, 0);
+
+            HW_SCE_p_func101(0x0a72baffU, 0x1116048fU, 0x9341c6b8U, 0x69f14887U);
+        }
+    }
+
+    WR1_PROG(REG_1404H, 0x17a80000U);
+    WR1_PROG(REG_1608H, 0x810102e0U);
+    WR1_PROG(REG_1400H, 0x00c00005U);
+    WAIT_STS(REG_1404H, 30, 0);
+    WR1_PROG(REG_143CH, 0x00001800U);
+    WR1_PROG(REG_1400H, 0x00c90005U);
+    WAIT_STS(REG_1404H, 30, 0);
+    WR1_PROG(REG_143CH, 0x00001800U);
+
+    WR1_PROG(REG_1600H, 0x00007c1dU);
+    WR1_PROG(REG_143CH, 0x00602000U);
+    WR1_PROG(REG_1458H, 0x00000000U);
+}

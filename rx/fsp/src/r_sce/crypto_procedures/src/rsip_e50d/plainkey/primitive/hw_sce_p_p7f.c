@@ -1,0 +1,567 @@
+/*
+* Copyright (c) 2020 - 2026 Renesas Electronics Corporation and/or its affiliates
+*
+* SPDX-License-Identifier: BSD-3-Clause
+*/
+
+#include "hw_sce_rx_private.h"
+
+fsp_err_t HW_SCE_GenerateEccP512RandomKeyIndexSub (const uint32_t InData_KeyMode[],
+                                                   const uint32_t InData_DomainParam[],
+                                                   uint32_t       OutData_PubKey[],
+                                                   uint32_t       OutData_PrivKeyIndex[],
+                                                   uint32_t       OutData_PrivKey[])
+{
+    uint32_t iLoop = 0U;
+    uint32_t jLoop = 0U;
+
+    if (RD1_MASK(REG_14B8H, 0x0000001eU) != 0)
+    {
+        return FSP_ERR_CRYPTO_SCE_RESOURCE_CONFLICT;
+    }
+
+    WR1_PROG(REG_1B00H, 0x007f0001U);
+    WR1_PROG(REG_144CH, 0x00000000U);
+
+    WR1_PROG(REG_1000H, 0x00010000U);
+    WR1_PROG(REG_1024H, 0x000007f0U);
+
+    HW_SCE_p_func100(0x742f3541U, 0x13d29c94U, 0x24b59843U, 0xf45e37a8U);
+    HW_SCE_p_func078(InData_DomainParam);
+
+    HW_SCE_p_func100(0x0a833002U, 0x9ef734bbU, 0x0660d546U, 0x282afb94U);
+    WR1_PROG(REG_1010H, 0x00000020U);
+    WR1_PROG(REG_101CH, 0x000000c0U);
+
+    WR1_PROG(REG_1004H, 0x08080010U);
+    WR1_PROG(REG_1000H, 0x00010001U);
+    WAIT_STS(REG_1000H, 0, 0);
+
+    WR1_PROG(REG_1010H, 0x00000018U);
+    WR1_PROG(REG_101CH, 0x00000070U);
+
+    WR1_PROG(REG_1004H, 0x08080010U);
+    WR1_PROG(REG_1000H, 0x00010001U);
+    WAIT_STS(REG_1000H, 0, 0);
+
+    WR1_PROG(REG_1404H, 0x12a80000U);
+    HW_SCE_p_func103();
+    HW_SCE_p_func100(0x07428138U, 0x8c9e655cU, 0x758ff6daU, 0x9808122dU);
+    WR1_PROG(REG_1444H, 0x000000a2U);
+    WR1_PROG(REG_1A24H, 0x0c200104U);
+    WAIT_STS(REG_1444H, 31, 1);
+    WR1_PROG(REG_1420H, change_endian_long(0x00000000U));
+    WR1_PROG(REG_1400H, 0x00c20011U);
+    WAIT_STS(REG_1404H, 30, 0);
+    WR1_PROG(REG_143CH, 0x00001800U);
+
+    HW_SCE_p_func103();
+    HW_SCE_p_func100(0xe6d2a447U, 0x48f8c8b7U, 0x58966152U, 0x43236029U);
+    WR1_PROG(REG_1444H, 0x000000a2U);
+    WR1_PROG(REG_1A24H, 0x0c200104U);
+    WAIT_STS(REG_1444H, 31, 1);
+    WR1_PROG(REG_1420H, change_endian_long(0x00000000U));
+    WR1_PROG(REG_1400H, 0x00c20011U);
+    WAIT_STS(REG_1404H, 30, 0);
+    WR1_PROG(REG_143CH, 0x00001800U);
+
+    HW_SCE_p_func103();
+    HW_SCE_p_func100(0xb0da4d20U, 0x5568c518U, 0xd6d3f644U, 0x928bf557U);
+    WR1_PROG(REG_1444H, 0x000000a2U);
+    WR1_PROG(REG_1A24H, 0x0c200104U);
+    WAIT_STS(REG_1444H, 31, 1);
+    WR1_PROG(REG_1420H, change_endian_long(0x00000000U));
+    WR1_PROG(REG_1400H, 0x00c20011U);
+    WAIT_STS(REG_1404H, 30, 0);
+    WR1_PROG(REG_143CH, 0x00001800U);
+
+    HW_SCE_p_func103();
+    HW_SCE_p_func100(0x7426fe24U, 0x70cfab0bU, 0x9324115eU, 0x3b050f5bU);
+    WR1_PROG(REG_1444H, 0x000000a2U);
+    WR1_PROG(REG_1A24H, 0x0c200104U);
+    WAIT_STS(REG_1444H, 31, 1);
+    WR1_PROG(REG_1420H, change_endian_long(0x00000000U));
+    WR1_PROG(REG_1400H, 0x00c20011U);
+    WAIT_STS(REG_1404H, 30, 0);
+    WR1_PROG(REG_143CH, 0x00001800U);
+
+    HW_SCE_p_func103();
+    WR1_PROG(REG_1444H, 0x000000a2U);
+    WR1_PROG(REG_1A24H, 0x0c200104U);
+    WAIT_STS(REG_1444H, 31, 1);
+    WR1_PROG(REG_1420H, change_endian_long(0x00000000U));
+
+    WR1_PROG(REG_1400H, 0x00c20009U);
+    WAIT_STS(REG_1404H, 30, 0);
+    WR1_PROG(REG_143CH, 0x00001800U);
+    WR1_PROG(REG_1400H, 0x00020009U);
+    WAIT_STS(REG_1404H, 30, 0);
+    WR1_PROG(REG_143CH, 0x00001800U);
+
+    WR1_PROG(REG_1404H, 0x10d00000U);
+    WR1_PROG(REG_1444H, 0x000000a2U);
+    WR1_PROG(REG_1A24H, 0x08000104U);
+    WAIT_STS(REG_1444H, 31, 1);
+    WR1_PROG(REG_1420H, change_endian_long(0x00000001U));
+    WR1_PROG(REG_1400H, 0x00c0003dU);
+    WAIT_STS(REG_1404H, 30, 0);
+    WR1_PROG(REG_143CH, 0x00001800U);
+    WR1_PROG(REG_1400H, 0x00c20005U);
+    WAIT_STS(REG_1404H, 30, 0);
+    WR1_PROG(REG_143CH, 0x00001800U);
+    WR1_PROG(REG_1400H, 0x0002000dU);
+    WAIT_STS(REG_1404H, 30, 0);
+    WR1_PROG(REG_143CH, 0x00001800U);
+
+    WR1_PROG(REG_1014H, 0x000000c0U);
+    WR1_PROG(REG_1018H, 0x00000110U);
+    WR1_PROG(REG_1020H, 0x000001b0U);
+
+    WR1_PROG(REG_1004H, 0x0808000aU);
+    WR1_PROG(REG_1000H, 0x00010001U);
+    WAIT_STS(REG_1000H, 0, 0);
+
+    WR1_PROG(REG_1404H, 0x11180000U);
+    WR1_PROG(REG_1444H, 0x000000a2U);
+    WR1_PROG(REG_1A24H, 0x08000104U);
+    WAIT_STS(REG_1444H, 31, 1);
+    WR1_PROG(REG_1420H, change_endian_long(0x00000001U));
+    WR1_PROG(REG_1400H, 0x00c0003dU);
+    WAIT_STS(REG_1404H, 30, 0);
+    WR1_PROG(REG_143CH, 0x00001800U);
+    WR1_PROG(REG_1400H, 0x00c20005U);
+    WAIT_STS(REG_1404H, 30, 0);
+    WR1_PROG(REG_143CH, 0x00001800U);
+    WR1_PROG(REG_1400H, 0x0002000dU);
+    WAIT_STS(REG_1404H, 30, 0);
+    WR1_PROG(REG_143CH, 0x00001800U);
+    WR1_PROG(REG_1400H, 0x00c00009U);
+    WAIT_STS(REG_1404H, 30, 0);
+    WR1_PROG(REG_143CH, 0x00001800U);
+
+    WR1_PROG(REG_1014H, 0x000001b0U);
+    WR1_PROG(REG_1018H, 0x00000160U);
+    WR1_PROG(REG_1020H, 0x00000250U);
+
+    WR1_PROG(REG_1004H, 0x08080007U);
+    WR1_PROG(REG_1000H, 0x00010001U);
+    WAIT_STS(REG_1000H, 0, 0);
+
+    HW_SCE_p_func100(0xb106ec19U, 0x38f8af91U, 0xb28c3c80U, 0xc5dc5804U);
+    WR1_PROG(REG_1600H, 0x00000800U);
+    WR1_PROG(REG_1600H, 0x00000821U);
+    WR1_PROG(REG_1600H, 0x00000863U);
+
+    WR1_PROG(REG_1404H, 0x12080000U);
+    WR1_PROG(REG_1608H, 0x80920001U);
+    WR1_PROG(REG_1400H, 0x03430049U);
+    WAIT_STS(REG_1404H, 30, 0);
+    WR1_PROG(REG_143CH, 0x00001800U);
+
+    for (iLoop = 0U; iLoop < 18U; iLoop++)
+    {
+        WR1_PROG(REG_1600H, 0x38000c63U);
+        WR1_PROG(REG_1600H, 0x20000842U);
+        WR1_PROG(REG_1600H, 0x10003841U);
+
+        WR1_PROG(REG_1600H, 0x0000b7c0U);
+        WR1_PROG(REG_1600H, 0x0000001fU);
+
+        for (jLoop = 0U; jLoop < 32U; jLoop++)
+        {
+            WR1_PROG(REG_1600H, 0x3800585eU);
+            WR1_PROG(REG_1600H, 0x20003460U);
+            WR1_PROG(REG_1600H, 0x20002c60U);
+            WR1_PROG(REG_1600H, 0x10002c00U);
+            WR1_PROG(REG_1600H, 0x100033c0U);
+        }
+
+        WR1_PROG(REG_1458H, 0x00000000U);
+        WR1_PROG(REG_1600H, 0x0000a420U);
+        WR1_PROG(REG_1600H, 0x00000004U);
+    }
+
+    WR1_PROG(REG_1458H, 0x00000000U);
+
+    WR1_PROG(REG_1404H, 0x14380000U);
+    WR1_PROG(REG_1400H, 0x00c00049U);
+    WAIT_STS(REG_1404H, 30, 0);
+    WR1_PROG(REG_143CH, 0x00001800U);
+
+    WR1_PROG(REG_1014H, 0x00000250U);
+    WR1_PROG(REG_1018H, 0x00000480U);
+    WR1_PROG(REG_1020H, 0x000001b0U);
+
+    WR1_PROG(REG_1004H, 0x09090009U);
+    WR1_PROG(REG_1000H, 0x00010001U);
+    WAIT_STS(REG_1000H, 0, 0);
+
+    WR1_PROG(REG_1404H, 0x10c80000U);
+    WR1_PROG(REG_1444H, 0x000000a2U);
+    WR1_PROG(REG_1A24H, 0x08000104U);
+    WAIT_STS(REG_1444H, 31, 1);
+    WR1_PROG(REG_1420H, change_endian_long(0x00000002U));
+    WR1_PROG(REG_1400H, 0x00c00045U);
+    WAIT_STS(REG_1404H, 30, 0);
+    WR1_PROG(REG_143CH, 0x00001800U);
+    WR1_PROG(REG_1400H, 0x00c20005U);
+    WAIT_STS(REG_1404H, 30, 0);
+    WR1_PROG(REG_143CH, 0x00001800U);
+    WR1_PROG(REG_1400H, 0x0002000dU);
+    WAIT_STS(REG_1404H, 30, 0);
+    WR1_PROG(REG_143CH, 0x00001800U);
+
+    WR1_PROG(REG_1600H, 0x00003403U);
+
+    WR1_PROG(REG_1600H, 0x00003060U);
+
+    WR1_PROG(REG_1608H, 0x81010060U);
+    WR1_PROG(REG_1408H, 0x00005006U);
+    WAIT_STS(REG_1408H, 30, 1);
+    RD1_ADDR(REG_1420H, &S_RAM[0]);
+    S_RAM[0] = change_endian_long(S_RAM[0]);
+
+    for (iLoop = 0U; iLoop < S_RAM[0]; iLoop++)
+    {
+        WR1_PROG(REG_1014H, 0x000001b0U);
+        WR1_PROG(REG_1018H, 0x00000110U);
+        WR1_PROG(REG_1020H, 0x00000250U);
+
+        WR1_PROG(REG_1004H, 0x09090007U);
+        WR1_PROG(REG_1000H, 0x00010001U);
+        WAIT_STS(REG_1000H, 0, 0);
+
+        WR1_PROG(REG_1014H, 0x00000250U);
+        WR1_PROG(REG_1018H, 0x00000480U);
+        WR1_PROG(REG_1020H, 0x000001b0U);
+
+        WR1_PROG(REG_1004H, 0x09090009U);
+        WR1_PROG(REG_1000H, 0x00010001U);
+        WAIT_STS(REG_1000H, 0, 0);
+
+        WR1_PROG(REG_1600H, 0x00003060U);
+
+        HW_SCE_p_func101(0x76bee013U, 0x2c7b2bf5U, 0xf7e20be9U, 0x83672ab4U);
+    }
+
+    WR1_PROG(REG_1458H, 0x00000000U);
+
+    WR1_PROG(REG_1600H, 0x00007c03U);
+    WR1_PROG(REG_143CH, 0x00602000U);
+    WR1_PROG(REG_1458H, 0x00000000U);
+
+    WR1_PROG(REG_1404H, 0x10c80000U);
+    WR1_PROG(REG_1400H, 0x00c00049U);
+    WAIT_STS(REG_1404H, 30, 0);
+    WR1_PROG(REG_143CH, 0x00001800U);
+
+    HW_SCE_p_func100(0x0c1f12b1U, 0x4aebd1feU, 0x13bab2f7U, 0x84024f70U);
+    WR1_PROG(REG_1600H, 0x0000a400U);
+    WR1_PROG(REG_1600H, 0x00000040U);
+
+    WR1_PROG(REG_1608H, 0x81010000U);
+    WR1_PROG(REG_1408H, 0x00005006U);
+    WAIT_STS(REG_1408H, 30, 1);
+    RD1_ADDR(REG_1420H, &S_RAM[0]);
+    S_RAM[0] = change_endian_long(S_RAM[0]);
+
+    for (iLoop = 0U; iLoop < S_RAM[0]; iLoop++)
+    {
+        WR1_PROG(REG_1014H, 0x000002f0U);
+        WR1_PROG(REG_1018H, 0x000001b0U);
+        WR1_PROG(REG_1020H, 0x00000250U);
+
+        WR1_PROG(REG_1004H, 0x0909000aU);
+        WR1_PROG(REG_1000H, 0x00010001U);
+        WAIT_STS(REG_1000H, 0, 0);
+
+        WR1_PROG(REG_143CH, 0x00a10000U);
+
+        HW_SCE_p_func100(0x518849baU, 0x437de5b7U, 0x5a3f0da4U, 0x0d521963U);
+        WR1_PROG(REG_143CH, 0x00400000U);
+
+        if (CHCK_STS(REG_143CH, 22, 1))
+        {
+            WR1_PROG(REG_1014H, 0x00000250U);
+            WR1_PROG(REG_1018H, 0x00000110U);
+            WR1_PROG(REG_1020H, 0x000002f0U);
+
+            WR1_PROG(REG_1004H, 0x09090009U);
+            WR1_PROG(REG_1000H, 0x00010001U);
+            WAIT_STS(REG_1000H, 0, 0);
+
+            HW_SCE_p_func101(0xcb304ef9U, 0x6d9ab68bU, 0x8010d6b3U, 0xf85702a2U);
+        }
+
+        WR1_PROG(REG_1014H, 0x000001b0U);
+        WR1_PROG(REG_1020H, 0x00000250U);
+
+        WR1_PROG(REG_1004H, 0x0909000cU);
+        WR1_PROG(REG_1000H, 0x00010001U);
+        WAIT_STS(REG_1000H, 0, 0);
+
+        WR1_PROG(REG_1014H, 0x00000250U);
+        WR1_PROG(REG_1018H, 0x00000110U);
+        WR1_PROG(REG_1020H, 0x000001b0U);
+
+        WR1_PROG(REG_1004H, 0x09090009U);
+        WR1_PROG(REG_1000H, 0x00010001U);
+        WAIT_STS(REG_1000H, 0, 0);
+        WR1_PROG(REG_1600H, 0x00003000U);
+
+        HW_SCE_p_func101(0xfb804362U, 0xa8681f43U, 0xd3449ca7U, 0x2b93d705U);
+    }
+
+    WR1_PROG(REG_1458H, 0x00000000U);
+
+    WR1_PROG(REG_1600H, 0x00007c00U);
+    WR1_PROG(REG_143CH, 0x00602000U);
+    WR1_PROG(REG_1458H, 0x00000000U);
+
+    WR1_PROG(REG_1404H, 0x10d00000U);
+    WR1_PROG(REG_1444H, 0x000000a2U);
+    WR1_PROG(REG_1A24H, 0x08000104U);
+    WAIT_STS(REG_1444H, 31, 1);
+    WR1_PROG(REG_1420H, change_endian_long(0x00000001U));
+    WR1_PROG(REG_1400H, 0x00c0003dU);
+    WAIT_STS(REG_1404H, 30, 0);
+    WR1_PROG(REG_143CH, 0x00001800U);
+    WR1_PROG(REG_1400H, 0x00c20005U);
+    WAIT_STS(REG_1404H, 30, 0);
+    WR1_PROG(REG_143CH, 0x00001800U);
+    WR1_PROG(REG_1400H, 0x0002000dU);
+    WAIT_STS(REG_1404H, 30, 0);
+    WR1_PROG(REG_143CH, 0x00001800U);
+
+    WR1_PROG(REG_1014H, 0x000002f0U);
+    WR1_PROG(REG_1018H, 0x00000110U);
+    WR1_PROG(REG_1020H, 0x00000340U);
+
+    WR1_PROG(REG_1004H, 0x08080009U);
+    WR1_PROG(REG_1000H, 0x00010001U);
+    WAIT_STS(REG_1000H, 0, 0);
+
+    HW_SCE_p_func100(0xb5054d36U, 0x85fb9dbdU, 0x9f4f5cd2U, 0xb114d06bU);
+
+    HW_SCE_p_func079(InData_DomainParam);
+
+    WR1_PROG(REG_1444H, 0x000000a7U);
+    WR1_PROG(REG_1608H, 0x800103a0U);
+    WAIT_STS(REG_1444H, 31, 1);
+    WR1_PROG(REG_1420H, change_endian_long(0x0000007fU));
+    WR1_PROG(REG_1458H, 0x00000000U);
+
+    HW_SCE_p_func101(0x2c4d9db9U, 0x4f62b7cbU, 0xf10bc376U, 0xa16ca4f4U);
+    HW_SCE_p_func090();
+
+    HW_SCE_p_func100(0x33eab683U, 0x4d46715cU, 0x54ca0613U, 0x236257cdU);
+    WR1_PROG(REG_143CH, 0x00400000U);
+
+    if (CHCK_STS(REG_143CH, 22, 1))
+    {
+        HW_SCE_p_func102(0x2e090c3dU, 0x14ccdf9dU, 0x7f145676U, 0x7575c37aU);
+        WR1_PROG(REG_14B8H, 0x00000040U);
+        WAIT_STS(REG_142CH, 12, 0);
+
+        return FSP_ERR_CRYPTO_SCE_FAIL;
+    }
+    else
+    {
+        WR1_PROG(REG_1444H, 0x000000c7U);
+        WR1_PROG(REG_1608H, 0x800103e0U);
+        WAIT_STS(REG_1444H, 31, 1);
+        WR1_PROG(REG_1420H, InData_KeyMode[0]);
+        WR1_PROG(REG_1458H, 0x00000000U);
+
+        WR1_PROG(REG_1600H, 0x38000fffU);
+        WR1_PROG(REG_1608H, 0x00000080U);
+        WR1_PROG(REG_143CH, 0x00260000U);
+
+        HW_SCE_p_func100(0x98d69925U, 0x24debc52U, 0xeaf063b5U, 0xd024a1eeU);
+        WR1_PROG(REG_143CH, 0x00400000U);
+
+        if (CHCK_STS(REG_143CH, 22, 1))
+        {
+            HW_SCE_p_func100(0x95beeaf9U, 0x31dcd88fU, 0x6a02997aU, 0x35df195eU);
+            HW_SCE_p_func103();
+
+            WR1_PROG(REG_1444H, 0x000000a2U);
+            WR1_PROG(REG_1A24H, 0x0c200104U);
+            WAIT_STS(REG_1444H, 31, 1);
+            WR1_PROG(REG_1420H, change_endian_long(0x00000000U));
+
+            WR1_PROG(REG_1608H, 0x80010000U);
+            WR1_PROG(REG_1400H, 0x03420005U);
+            WAIT_STS(REG_1404H, 30, 0);
+            WR1_PROG(REG_143CH, 0x00001800U);
+            WR1_PROG(REG_1400H, 0x0002000dU);
+            WAIT_STS(REG_1404H, 30, 0);
+            WR1_PROG(REG_143CH, 0x00001800U);
+
+            WR1_PROG(REG_1600H, 0x000034e0U);
+
+            WR1_PROG(REG_1444H, 0x000000a7U);
+            WR1_PROG(REG_1608H, 0x800103a0U);
+            WAIT_STS(REG_1444H, 31, 1);
+            WR1_PROG(REG_1420H, change_endian_long(0x0000007fU));
+            WR1_PROG(REG_1458H, 0x00000000U);
+
+            HW_SCE_p_func101(0x1fd9d263U, 0x3c73a617U, 0x2a79131fU, 0x64ccb440U);
+            HW_SCE_p_func043();
+
+            WR1_PROG(REG_1600H, 0x0000b4e0U);
+            WR1_PROG(REG_1600H, 0x00000021U);
+
+            WR1_PROG(REG_1444H, 0x000000a7U);
+            WR1_PROG(REG_1608H, 0x800103a0U);
+            WAIT_STS(REG_1444H, 31, 1);
+            WR1_PROG(REG_1420H, change_endian_long(0x0000007fU));
+            WR1_PROG(REG_1458H, 0x00000000U);
+
+            HW_SCE_p_func101(0xfd50cfb5U, 0x3d3607aeU, 0xf9b6ab32U, 0xf84a3317U);
+            HW_SCE_p_func044();
+
+            HW_SCE_p_func100(0xaade8828U, 0x1f50f658U, 0x00e5aa5dU, 0xdc9ee973U);
+            WR1_PROG(REG_1A2CH, 0x40000200U);
+            WR1_PROG(REG_1A24H, 0xe7009d07U);
+            WR1_PROG(REG_1404H, 0x13000000U);
+            WR1_PROG(REG_1400H, 0x00830031U);
+            WAIT_STS(REG_1404H, 30, 0);
+            WR1_PROG(REG_143CH, 0x00001800U);
+
+            WR1_PROG(REG_1408H, 0x00002032U);
+            for (iLoop = 0U; iLoop < 12U; iLoop = iLoop + 4U)
+            {
+                WAIT_STS(REG_1408H, 30, 1);
+                RD4_ADDR(REG_1420H, &OutData_PrivKeyIndex[iLoop + 1]);
+            }
+
+            WR1_PROG(REG_1458H, 0x00000000U);
+
+            HW_SCE_p_func100(0x9b886c24U, 0xf2519cd6U, 0x4ecafb78U, 0x989f2108U);
+            WR1_PROG(REG_1A2CH, 0x40000000U);
+            WR1_PROG(REG_1A24H, 0xe7008d05U);
+            WR1_PROG(REG_1400H, 0x00830011U);
+            WAIT_STS(REG_1404H, 30, 0);
+            WR1_PROG(REG_143CH, 0x00001800U);
+
+            WR1_PROG(REG_1408H, 0x00002012U);
+            WAIT_STS(REG_1408H, 30, 1);
+            RD4_ADDR(REG_1420H, &OutData_PrivKeyIndex[iLoop + 1]);
+
+            HW_SCE_p_func100(0x642959e6U, 0x26c78790U, 0x4040ec50U, 0x4b72b63bU);
+            WR1_PROG(REG_1444H, 0x000000a2U);
+            WR1_PROG(REG_1A24H, 0x0c000104U);
+            WAIT_STS(REG_1444H, 31, 1);
+            WR1_PROG(REG_1420H, change_endian_long(0x00000000U));
+
+            WR1_PROG(REG_1A2CH, 0x40000000U);
+            WR1_PROG(REG_1A24H, 0x09108105U);
+            WR1_PROG(REG_1400H, 0x00820011U);
+            WAIT_STS(REG_1404H, 30, 0);
+            WR1_PROG(REG_143CH, 0x00001800U);
+
+            WR1_PROG(REG_1408H, 0x00002012U);
+            WAIT_STS(REG_1408H, 30, 1);
+            RD4_ADDR(REG_1420H, &OutData_PrivKeyIndex[iLoop + 5]);
+
+            HW_SCE_p_func100(0x8e52baa8U, 0x16053734U, 0x44ad8732U, 0x0dc73f01U);
+            WR1_PROG(REG_1608H, 0x81010000U);
+            WR1_PROG(REG_1408H, 0x00005006U);
+            WAIT_STS(REG_1408H, 30, 1);
+            RD1_ADDR(REG_1420H, &OutData_PrivKeyIndex[0]);
+            HW_SCE_p_func101(0x1da8f94eU, 0xf27e7261U, 0x3bee3e1aU, 0x7a50fa92U);
+        }
+        else
+        {
+            HW_SCE_p_func100(0xfbb29e4fU, 0x68f27dceU, 0x16420ec7U, 0x3aadaba0U);
+            WR1_PROG(REG_1A2CH, 0x40000200U);
+            WR1_PROG(REG_1A24H, 0x08008107U);
+            WR1_PROG(REG_1404H, 0x13000000U);
+            WR1_PROG(REG_1400H, 0x00830031U);
+            WAIT_STS(REG_1404H, 30, 0);
+            WR1_PROG(REG_143CH, 0x00001800U);
+
+            WR1_PROG(REG_1408H, 0x00002032U);
+            for (iLoop = 0U; iLoop < 12U; iLoop = iLoop + 4U)
+            {
+                WAIT_STS(REG_1408H, 30, 1);
+                RD4_ADDR(REG_1420H, &OutData_PrivKey[iLoop]);
+            }
+
+            WR1_PROG(REG_1458H, 0x00000000U);
+
+            HW_SCE_p_func100(0xc706cf19U, 0xba8e9b64U, 0xc01fc1ccU, 0xcf5384faU);
+            WR1_PROG(REG_1A2CH, 0x40000000U);
+            WR1_PROG(REG_1A24H, 0x08008107U);
+            WR1_PROG(REG_1400H, 0x00830011U);
+            WAIT_STS(REG_1404H, 30, 0);
+            WR1_PROG(REG_143CH, 0x00001800U);
+
+            WR1_PROG(REG_1408H, 0x00002012U);
+            WAIT_STS(REG_1408H, 30, 1);
+            RD4_ADDR(REG_1420H, &OutData_PrivKey[iLoop]);
+
+            HW_SCE_p_func101(0x6bb5eb62U, 0xfef549feU, 0x65a672ebU, 0x93f0d52aU);
+        }
+
+        HW_SCE_p_func100(0x0b33c916U, 0xdbee0d7fU, 0xed0a147cU, 0x0be9debfU);
+        WR1_PROG(REG_1A2CH, 0x40000200U);
+        WR1_PROG(REG_1A24H, 0x08008107U);
+        WR1_PROG(REG_1404H, 0x12600000U);
+        WR1_PROG(REG_1400H, 0x00830031U);
+        WAIT_STS(REG_1404H, 30, 0);
+        WR1_PROG(REG_143CH, 0x00001800U);
+
+        WR1_PROG(REG_1408H, 0x00002032U);
+        for (iLoop = 0U; iLoop < 12U; iLoop = iLoop + 4U)
+        {
+            WAIT_STS(REG_1408H, 30, 1);
+            RD4_ADDR(REG_1420H, &OutData_PubKey[iLoop]);
+        }
+
+        WR1_PROG(REG_1458H, 0x00000000U);
+
+        HW_SCE_p_func100(0x81807e75U, 0xd7c79c95U, 0xdeb96b6aU, 0x073f2b65U);
+        WR1_PROG(REG_1A2CH, 0x40000200U);
+        WR1_PROG(REG_1A24H, 0x08008107U);
+        WR1_PROG(REG_1400H, 0x00830011U);
+        WAIT_STS(REG_1404H, 30, 0);
+        WR1_PROG(REG_143CH, 0x00001800U);
+        WR1_PROG(REG_1404H, 0x12b00000U);
+        WR1_PROG(REG_1400H, 0x00830021U);
+        WAIT_STS(REG_1404H, 30, 0);
+        WR1_PROG(REG_143CH, 0x00001800U);
+
+        WR1_PROG(REG_1408H, 0x00002032U);
+        for (iLoop = 12; iLoop < 24U; iLoop = iLoop + 4U)
+        {
+            WAIT_STS(REG_1408H, 30, 1);
+            RD4_ADDR(REG_1420H, &OutData_PubKey[iLoop]);
+        }
+
+        WR1_PROG(REG_1458H, 0x00000000U);
+
+        HW_SCE_p_func100(0x26e20965U, 0x10b8fd2cU, 0xb65be2a1U, 0xf0ec9019U);
+        WR1_PROG(REG_1A2CH, 0x40000100U);
+        WR1_PROG(REG_1A24H, 0x08008107U);
+        WR1_PROG(REG_1400H, 0x00830021U);
+        WAIT_STS(REG_1404H, 30, 0);
+        WR1_PROG(REG_143CH, 0x00001800U);
+
+        WR1_PROG(REG_1408H, 0x00002022U);
+        for (iLoop = 24; iLoop < 32U; iLoop = iLoop + 4U)
+        {
+            WAIT_STS(REG_1408H, 30, 1);
+            RD4_ADDR(REG_1420H, &OutData_PubKey[iLoop]);
+        }
+
+        WR1_PROG(REG_1458H, 0x00000000U);
+
+        HW_SCE_p_func102(0x2fefe850U, 0x88c1d680U, 0xc658ca06U, 0x0355e097U);
+        WR1_PROG(REG_14B8H, 0x00000040U);
+        WAIT_STS(REG_142CH, 12, 0);
+
+        return FSP_SUCCESS;
+    }
+}
