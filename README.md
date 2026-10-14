@@ -62,8 +62,36 @@ If you have already installed a previous FSP release that included e² studio th
 
 ### Starting Development
 
-1. Open e² studio and click File > New > C/C++ Project.
-2. In the window that pops up, choose Renesas RX in the left pane.
+1. Open e² studio and click File > New > Renesas C/C++ Project > Renesas RX.
+2. In the window that pops up, choose the type of template for the project you are creating:
+   - Renesas RX C/C++ FSP project: For a single project
+   - Renesas RX FSP Solution: For multiple projects 
+3. Enter project name and location. 
+4. Click Next.
+5. In the Project Configuration window, select the hardware and software environment.
+   - Select the FSP version.
+   - Select the Board for your application. 
+     - You can select an existing RX MCU Evaluation Kit or select Custom User Board for any of the RX MCU devices with your own BSP definition.
+   - Select the Device. 
+     - The Device is automatically populated based on the Board selection. Only change the Device when using the Custom User Board (Any Device) board selection.
+   - Select the toolchain and version.
+   - Select the Debugger. 
+6. Click Next.
+7. Select Flat or Protect Zone Project.
+   - Flat Project: Without Protect Zone separation. RX device will remain in secure mode.
+   - Protect Zone Secure Project: For Protect Zone execution. All code, data, and peripherals will be initialized as secure.
+   - Protect Zone Non-secure Project: For Protect Zone non-secure execution. All code, data, and peripherals will be initialized as non-secure.
+   
+   For more details, please refer to the detailed explanation of each selection in the window.
+8. Select None / Preceding Project or Smart Bundle. 
+   - For Flat project, select None.
+9. In the next window, select the build artifact and RTOS.
+10. Select a project template from the list of available templates. 
+    -  If you want to develop your own application, select the basic template for your board, Bare Metal - Minimal.
+
+When the project is created, e² studio displays a summary of the current project configuration in the RX MCU Project Editor.
+
+For more information, refer to [Creating a Project](https://renesas.github.io/rx-fsp/_s_t_a_r_t__d_e_v.html#creating-a-project)
 
 ### Related Links
 
