@@ -107,7 +107,7 @@ RX Product Support Forum: www.renesas.com/rx/forum
 
 e² studio: www.renesas.com/e2studio
 
-Example Projects: https://github.com/renesas/rx-fsp-examples (Under Construction)
+Example Projects: https://github.com/renesas/rx-fsp-examples
 
 Knowledge Base: https://en-support.renesas.com/knowledgeBase/category/30942
 
