@@ -99,7 +99,7 @@ FSP Releases:  https://github.com/renesas/rx-fsp/releases
 
 FSP Documentation: https://renesas.github.io/rx-fsp
 
-FSP Webpage: http://renesas.com/rx-fsp (Under Construction)
+FSP Webpage: http://renesas.com/rx-fsp
 
 RX Product Information: www.renesas.com/rx
 
