@@ -27,9 +27,16 @@ For a list of software modules packaged with FSP, see [Supported Software](SUPPO
 
 On November 21, 2023, Microsoft announced that they have decided to contribute Azure RTOS to open source under the stewardship of the Eclipse foundation and Azure RTOS will become Eclipse ThreadX. For detailed information, please refer to the announcement at [Microsoft Contributes Azure RTOS to Open Source](https://techcommunity.microsoft.com/t5/internet-of-things-blog/microsoft-contributes-azure-rtos-to-open-source/ba-p/3986318).
 
-The support strategy scheme for Eclipse ThreadX will be determined and communicated at a later date. Microsoft will discontinue the Azure RTOS and Azure RTOS Middleware under the existing agreement [LICENSED-HARDWARE.txt](https://github.com/eclipse-threadx/threadx/blob/v6.4.0_rel/LICENSED-HARDWARE.txt).
+Microsoft will discontinue the Azure RTOS and Azure RTOS Middleware under the existing agreement [LICENSED-HARDWARE.txt](https://github.com/eclipse-threadx/threadx/blob/v6.4.0_rel/LICENSED-HARDWARE.txt).
 
 It is important to note that updates for Azure RTOS on these hardware will no longer be provided.
+
+#### Upcoming RTOS change in RX FSP v1.1.0
+
+RX FSP v1.1.0 is planned to transition from Azure RTOS 6.4.0 to Eclipse ThreadX 6.5.2.
+
+Additional migration information will be provided with the RX FSP v1.1.0 release.
+
 
 ### Product Security Advisories
 
